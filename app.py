@@ -1,4 +1,97 @@
+import requests
 
+from bst import Beautifulsoup
+
+import logging
+
+logging.basicConfig(level=logging.INFO, formats (asctine)s X(levelname)s (message)s")
+
+def scrape website(url):
+
+***Scrapes the content of a website and returns the text.***
+
+try:
+
+response requests.get(url, timeout=10)
+
+response.raise_for_status()
+
+soup BeautifulSoup(response.text, 'html.parser")
+
+text content soup.get text(separators, stripsTrue)
+
+return text content
+
+except requests.exceptions. 551.Error as sslerr:
+
+logging.error(f"55L error occurred: (ssl_err)")
+
+except requests.exceptions, RequestException as req err:
+
+logging.error(f"Request error occurred: req err)")
+
+axcept Exception as es
+logging.error(f"An error occurred: ()")
+
+def answer query(query, scraped_data):
+
+21 Finds relevant content based on the user's query."
+
+22 results=
+
+23 for url, content in scraped data.items():
+
+24 if query.lower() in content.lower():
+
+25 results.append((ur), content))
+
+26 return results
+def main():
+urls=
+
+31 "https://www.uchicago.edu/",
+
+32 "https://www.washington.edu/
+
+33 "https://www.stanford.edu/",
+
+34 "https://und.edu/"
+
+35
+
+36 scraped data=
+
+37 for url in uris:
+
+contents scrape_website(url)
+
+if content:
+
+logging.info(f"Successfully scraped content from (url)")
+
+41 scraped data url) content
+
+42 user query input("Enter your query: ")
+
+43 results answer query(user query, scraped data)
+
+44 if results:
+
+45 print("Wiltesults found:")
+
+46 for url, content än results:
+
+47 print("\nFrom (url):\n(content :500...") Preview first 200 characters
+
+else:
+
+49 print("No results found for your query.")
+
+se
+
+51 fname="main
+
+52 main()
 import requests
 from bs4 import BeautifulSoup
 from sentence_transformers import SentenceTransformer
